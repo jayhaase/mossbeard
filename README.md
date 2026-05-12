@@ -11,13 +11,15 @@ Website for Mossbeard the Wanderer — a Renaissance faire character and keeper 
 
 This site uses [Jekyll](https://jekyllrb.com/), which GitHub Pages builds automatically.
 
-**No local build step is required.** Just push your changes to GitHub and the site updates itself.
+**No local build step is required.** Just push your changes to GitHub — the Actions workflow builds and deploys the site automatically.
 
 To enable GitHub Pages for the first time:
 1. Push the repo to GitHub
 2. Go to **Settings → Pages**
-3. Set Source to **Deploy from a branch**, branch `main`, folder `/ (root)`
-4. GitHub will build and publish the site — the URL appears at the top of that page
+3. Set Source to **GitHub Actions** (not "Deploy from a branch")
+4. The next push will trigger a build — the live URL appears at the top of that page once it completes
+
+Build status is visible under the **Actions** tab in the repo.
 
 ---
 

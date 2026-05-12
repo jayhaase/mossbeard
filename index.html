@@ -8,31 +8,44 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ========== HERO ========== -->
-  <section id="hero">
+  <header>
+  <section id="hero" aria-labelledby="hero-title">
     <div class="hero-overlay">
       <div class="hero-content">
-        <h1>Mossbeard</h1>
+        <h1 id="hero-title">Mossbeard</h1>
         <p class="hero-subtitle">the Wanderer</p>
         <!-- <p class="hero-tagline">"Keeper of quiet trails and old tales.<br>If you listen close, the forest might just whisper back…"</p> -->
         <a href="#the-wanderer" class="scroll-hint" aria-label="Scroll down">&#8595;</a>
       </div>
     </div>
   </section>
+  </header>
 
   <!-- ========== NAV ========== -->
   <nav id="main-nav" aria-label="Main navigation">
-    <a href="#the-wanderer">The Wanderer</a>
-    <a href="#forgotten-words">Forgotten Words</a>
-    <a href="#relics">Relics</a>
-    <a href="#find-mossbeard">Find Mossbeard</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#connect">Connect</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <div id="nav-links" class="nav-links">
+      <a href="#the-wanderer">The Wanderer</a>
+      <a href="#forgotten-words">Forgotten Words</a>
+      <a href="#relics">Relics</a>
+      <a href="#find-mossbeard">Find Mossbeard</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#connect">Connect</a>
+    </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- ========== THE WANDERER ========== -->
   <section id="the-wanderer" class="section-dark">
@@ -182,14 +195,6 @@
     </div>
   </section>
 
-  <!-- ========== LIGHTBOX ========== -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
-    <button class="lightbox-close" aria-label="Close photo viewer">&#10005;</button>
-    <button class="lightbox-prev" aria-label="Previous photo">&#8592;</button>
-    <img id="lightbox-img" src="" alt="">
-    <button class="lightbox-next" aria-label="Next photo">&#8594;</button>
-  </div>
-
   <!-- ========== CONNECT ========== -->
   <section id="connect" class="section-connect">
     <div class="container container--centered">
@@ -200,11 +205,21 @@
     </div>
   </section>
 
+  </main>
+
+  <!-- ========== LIGHTBOX (outside <main>, it's a modal) ========== -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lightbox-close" aria-label="Close photo viewer">&#10005;</button>
+    <button class="lightbox-prev" aria-label="Previous photo">&#8592;</button>
+    <img id="lightbox-img" src="" alt="" aria-live="polite">
+    <button class="lightbox-next" aria-label="Next photo">&#8594;</button>
+  </div>
+
   <!-- ========== FOOTER ========== -->
   <footer>
     <p>&copy; 2026 Mossbeard the Wanderer &nbsp;&middot;&nbsp; By moss and stone, the magic is known.</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

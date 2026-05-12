@@ -345,18 +345,34 @@ h3 {
    ============================================= */
 
 .lore-intro {
-  background: rgba(201, 164, 71, 0.06);
-  border-left: 3px solid var(--gold);
-  padding: 1.25rem 2rem;
-  margin-bottom: 2.8rem;
-  border-radius: 0 3px 3px 0;
+  text-align: center;
+  padding: 0 1rem 2.8rem;
+  position: relative;
+}
+
+.lore-intro::before,
+.lore-intro::after {
+  content: '✦';
+  display: block;
+  color: var(--gold);
+  font-size: 0.85rem;
+  opacity: 0.5;
+  letter-spacing: 0.5em;
+  margin-bottom: 1.25rem;
+}
+
+.lore-intro::after {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
 }
 
 .lore-intro p {
-  font-size: 1.15rem;
-  font-style: italic;
-  color: var(--gold-light);
-  line-height: 1.75;
+  font-size: 1.2rem;
+  font-style: normal;
+  color: var(--parchment);
+  line-height: 1.85;
+  max-width: 58ch;
+  margin: 0 auto;
 }
 
 .lore-text p {

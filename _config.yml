@@ -4,8 +4,8 @@ baseurl:     ""
 url:         ""
 
 # Increment when you change CSS or JS to bust browser cache
-css_version: "1"
-js_version:  "1"
+css_version: "2"
+js_version:  "2"
 
 markdown: kramdown
 kramdown:

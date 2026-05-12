@@ -116,7 +116,7 @@ layout: default
             <p class="appearance-location">{{ appearance.location }}</p>
             <p>{{ appearance.description }}</p>
             {% if appearance.url %}
-            <a href="{{ appearance.url }}" target="_blank" rel="noopener" class="faire-link">{{ appearance.link_text }} &#8594;</a>
+            <a href="{{ appearance.url }}" target="_blank" rel="noopener" class="faire-link">{{ appearance.link_text | default: "Learn more" }} &#8594;</a>
             {% endif %}
           </div>
         </div>

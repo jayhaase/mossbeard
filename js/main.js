@@ -14,68 +14,70 @@ const focusableInLightbox = [btnClose, btnPrev, btnNext];
 
 let currentIndex = 0;
 
-function openLightbox(index) {
-  currentIndex = index;
-  const item = galleryItems[currentIndex];
-  lightboxImg.src = item.dataset.src;
-  lightboxImg.alt = item.dataset.alt;
-  lightbox.hidden = false;
-  document.body.style.overflow = 'hidden';
-  btnClose.focus();
-}
-
-function closeLightbox() {
-  lightbox.hidden = true;
-  document.body.style.overflow = '';
-  galleryItems[currentIndex].focus();
-}
-
-// Focus trap: keep Tab/Shift+Tab cycling within the lightbox buttons
-function trapFocus(e) {
-  if (lightbox.hidden || e.key !== 'Tab') return;
-  const first = focusableInLightbox[0];
-  const last  = focusableInLightbox[focusableInLightbox.length - 1];
-  if (e.shiftKey) {
-    if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-  } else {
-    if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+if (galleryItems.length > 0) {
+  function openLightbox(index) {
+    currentIndex = index;
+    const item = galleryItems[currentIndex];
+    lightboxImg.src = item.dataset.src;
+    lightboxImg.alt = item.dataset.alt;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    btnClose.focus();
   }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    galleryItems[currentIndex].focus();
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[currentIndex];
+    lightboxImg.src = item.dataset.src;
+    lightboxImg.alt = item.dataset.alt;
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    const item = galleryItems[currentIndex];
+    lightboxImg.src = item.dataset.src;
+    lightboxImg.alt = item.dataset.alt;
+  }
+
+  galleryItems.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
+  });
+
+  btnClose.addEventListener('click', closeLightbox);
+  btnPrev.addEventListener('click', showPrev);
+  btnNext.addEventListener('click', showNext);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Single keydown handler: focus trap + Escape/Arrow navigation
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.hidden) return;
+
+    // Escape / Arrow keys
+    if (e.key === 'Escape')     { closeLightbox(); return; }
+    if (e.key === 'ArrowLeft')  { showPrev(); return; }
+    if (e.key === 'ArrowRight') { showNext(); return; }
+
+    // Focus trap: keep Tab/Shift+Tab cycling within the lightbox buttons
+    if (e.key === 'Tab') {
+      const first = focusableInLightbox[0];
+      const last  = focusableInLightbox[focusableInLightbox.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+      }
+    }
+  });
 }
-
-document.addEventListener('keydown', trapFocus);
-
-function showPrev() {
-  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-  const item = galleryItems[currentIndex];
-  lightboxImg.src = item.dataset.src;
-  lightboxImg.alt = item.dataset.alt;
-}
-
-function showNext() {
-  currentIndex = (currentIndex + 1) % galleryItems.length;
-  const item = galleryItems[currentIndex];
-  lightboxImg.src = item.dataset.src;
-  lightboxImg.alt = item.dataset.alt;
-}
-
-galleryItems.forEach((item, i) => {
-  item.addEventListener('click', () => openLightbox(i));
-});
-
-btnClose.addEventListener('click', closeLightbox);
-btnPrev.addEventListener('click', showPrev);
-btnNext.addEventListener('click', showNext);
-
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
-
-document.addEventListener('keydown', (e) => {
-  if (lightbox.hidden) return;
-  if (e.key === 'Escape')      closeLightbox();
-  if (e.key === 'ArrowLeft')   showPrev();
-  if (e.key === 'ArrowRight')  showNext();
-});
 
 
 // ---- Mobile Nav Toggle ----
@@ -114,6 +116,8 @@ document.addEventListener('click', (e) => {
 const sections  = Array.from(document.querySelectorAll('section[id]'));
 const navLinks  = Array.from(document.querySelectorAll('.nav-links a'));
 
+const navHeight = mainNav ? mainNav.offsetHeight : 54;
+
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -126,7 +130,7 @@ const navObserver = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  rootMargin: `-${54}px 0px -60% 0px`,
+  rootMargin: `-${navHeight}px 0px -60% 0px`,
   threshold: 0,
 });
 

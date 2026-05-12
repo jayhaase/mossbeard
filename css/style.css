@@ -128,16 +128,6 @@ a {
   margin-top: 0.6rem;
 }
 
-.hero-tagline {
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
-  font-size: clamp(0.95rem, 2vw, 1.25rem);
-  color: var(--parchment-mid);
-  margin-top: 2rem;
-  opacity: 0.88;
-  line-height: 1.7;
-}
-
 .scroll-hint {
   display: inline-block;
   margin-top: 3rem;
@@ -644,6 +634,12 @@ h3 {
   opacity: 0.65;
 }
 
+.faire-link:focus-visible {
+  outline: 2px solid var(--crimson);
+  outline-offset: 3px;
+  border-bottom-color: transparent;
+}
+
 .appearances-footer {
   text-align: center;
   font-style: italic;
@@ -792,6 +788,11 @@ h3 {
   color: var(--bark);
 }
 
+.cta-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
 
 /* =============================================
    FOOTER
@@ -836,6 +837,11 @@ footer {
     padding: 2rem 1.5rem;
   }
 
+}
+
+/* background-attachment: fixed causes jank on iOS/iPadOS (all sizes).
+   Restrict it to pointer: fine devices (mouse-driven desktops) only. */
+@media (pointer: coarse) {
   #hero {
     background-attachment: scroll;
   }

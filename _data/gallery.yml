@@ -1,0 +1,36 @@
+# Gallery photos — add, remove, or reorder entries to update the gallery.
+# `src`   — path to the photo file (relative to site root)
+# `alt`   — full description for screen readers
+# `label` — short label used in the "View photo: ..." aria-label
+
+- src:   "photos/Facebook Image.jpg"
+  alt:   Mossbeard in the forest with his Everwood Staff
+  label: Mossbeard in the forest
+
+- src:   "photos/Facebook Image (2).jpg"
+  alt:   Mossbeard at the ancient mossy stone
+  label: Mossbeard at the mossy stone
+
+- src:   "photos/Facebook Image (3).jpg"
+  alt:   Mossbeard the Wanderer, proud and ready
+  label: Mossbeard portrait
+
+- src:   "photos/Facebook Image (7).jpg"
+  alt:   Mossbeard raising his staff to the sky
+  label: Mossbeard raises his staff
+
+- src:   "photos/Facebook Image (5).jpg"
+  alt:   Mossbeard lifting his staff before the Mad Hatter sign
+  label: Mossbeard at the faire
+
+- src:   "photos/Facebook Image (6).jpg"
+  alt:   Mossbeard at rest between wanderings
+  label: Mossbeard wandering
+
+- src:   "photos/Facebook Image (1).jpg"
+  alt:   Mossbeard encountering a winged traveler
+  label: Mossbeard with a winged patron
+
+- src:   "photos/Facebook Image (4).jpg"
+  alt:   A portrait of the Wanderer
+  label: Portrait of Mossbeard

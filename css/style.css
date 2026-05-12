@@ -424,7 +424,8 @@ h3 {
   margin-top: 2rem;
 }
 
-.scroll-text {
+/* Paragraphs rendered by markdownify inside the scroll container */
+.scroll-container > p {
   margin-bottom: 1.4rem;
   font-size: 1.05rem;
   color: var(--text-on-light);
@@ -433,7 +434,8 @@ h3 {
   margin-right: auto;
 }
 
-.scroll-mission {
+/* Blockquote rendered by markdownify (the > mission line in forgotten-words.md) */
+.scroll-container blockquote {
   font-family: 'Cinzel', serif;
   font-size: 1.1rem;
   font-style: normal;
@@ -446,6 +448,13 @@ h3 {
   border-top: 1px solid rgba(61, 43, 31, 0.25);
   border-bottom: 1px solid rgba(61, 43, 31, 0.25);
   max-width: 56ch;
+}
+
+/* Reset the <p> that markdownify wraps inside the blockquote */
+.scroll-container blockquote p {
+  margin: 0;
+  font-size: inherit;
+  max-width: none;
 }
 
 .incantation {

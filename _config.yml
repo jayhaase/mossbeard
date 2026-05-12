@@ -1,0 +1,20 @@
+title:       Mossbeard the Wanderer
+description: Keeper of quiet trails and old tales. Find Mossbeard the Wanderer at Renaissance faires near you.
+baseurl:     ""
+url:         ""
+
+# Increment when you change CSS or JS to bust browser cache
+css_version: "1"
+js_version:  "1"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Don't publish source docs or tooling folders
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - docs/
+  - .claude/
+  - README.md

@@ -1,0 +1,20 @@
+# Mossbeard's magical artifacts.
+# For a relic with a photo, add a `photo` and `photo_alt` field (and omit `icon`).
+# For a relic with an icon, add an `icon` field (Unicode character or HTML entity).
+
+- name:        The Gravity Compass
+  icon:        "⚈"
+  description: "A heavy, solid copper ball. It helps Mossbeard know up from down during complex magic — though he will drop it directly into your hands, with little warning."
+
+- name:        The Fairy Breath Bottle
+  icon:        "❄"
+  description: "A thick glass vessel with a cork stopper, containing the breath of Beetle the Fairy. What happens when you put fairy breath in a normal bottle? Even Mossbeard doesn't know."
+
+- name:        The Everwood Staff
+  icon:        "✦"
+  description: "Crowned with a crystal that is the very heart of Fairywing Forest. It stirs when old magic is near. It is heavy — do not drop it."
+
+- name:        The Lucky Monkey Paw
+  photo:       photos/Lucky Monkey Paw.jpg
+  photo_alt:   "The Lucky Monkey Paw — a copper pendant with a swirling galaxy marble"
+  description: "A copper pendant holding a swirling galaxy marble. It tends to bring happiness to those who hold it. Let Mossbeard know if it starts going kwee-kwee."

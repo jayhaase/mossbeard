@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}?v={{ site.css_version }}">
+</head>
+<body>
+
+  {{ content }}
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lightbox-close" aria-label="Close photo viewer">&#10005;</button>
+    <button class="lightbox-prev" aria-label="Previous photo">&#8592;</button>
+    <img id="lightbox-img" src="" alt="" aria-live="polite">
+    <button class="lightbox-next" aria-label="Next photo">&#8594;</button>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} &nbsp;&middot;&nbsp; By moss and stone, the magic is known.</p>
+  </footer>
+
+  <script src="{{ '/js/main.js' | relative_url }}?v={{ site.js_version }}"></script>
+</body>
+</html>

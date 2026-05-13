@@ -484,8 +484,20 @@ h3 {
 }
 
 .relic-card:hover {
-  border-color: rgba(201, 164, 71, 0.45);
-  transform: translateY(-4px);
+  border-color: rgba(201, 164, 71, 0.5);
+}
+
+@keyframes relic-stir {
+  0%   { transform: rotate(0deg) scale(1); }
+  20%  { transform: rotate(-9deg) scale(1.12); }
+  50%  { transform: rotate(7deg) scale(1.08); }
+  75%  { transform: rotate(-4deg) scale(1.04); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.relic-card:hover .relic-icon-svg {
+  animation: relic-stir 0.45s ease-in-out forwards;
+  opacity: 1;
 }
 
 .relic-icon-svg {
@@ -889,6 +901,10 @@ footer {
   .skip-link,
   .reveal {
     transition: none;
+  }
+
+  .relic-card:hover .relic-icon-svg {
+    animation: none;
   }
 
   .reveal {

@@ -315,7 +315,7 @@ h3 {
   gap: 1.1rem;
   color: var(--gold);
   font-size: 1.15rem;
-  margin: 1.1rem 0 3.2rem;
+  margin: 1.1rem 0 1.2rem;
   opacity: 0.55;
 }
 
@@ -339,6 +339,11 @@ h3 {
   color: var(--parchment);
   max-width: 58ch;
   margin: 0 auto 3rem;
+}
+
+.section-parchment .section-intro {
+  color: var(--text-on-light);
+  margin-bottom: 1.5rem;
 }
 
 
@@ -783,9 +788,8 @@ h3 {
    ============================================= */
 
 .section-connect .container p {
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--parchment-mid);
+  font-size: 1.2rem;
+  color: var(--parchment);
   max-width: 560px;
   margin: 0 auto 2.75rem;
   line-height: 1.8;

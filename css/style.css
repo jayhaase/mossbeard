@@ -373,6 +373,16 @@ h3 {
   margin-right: auto;
 }
 
+.lore-text p:first-of-type::first-letter {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 4.2rem;
+  line-height: 0.82;
+  float: left;
+  margin-right: 0.08em;
+  margin-top: 0.12em;
+  color: var(--gold);
+}
+
 .lore-text p:last-child {
   margin-bottom: 0;
 }
@@ -480,11 +490,12 @@ h3 {
   transform: translateY(-4px);
 }
 
-.relic-icon {
-  font-size: 2rem;
+.relic-icon-svg {
+  width: 2.8rem;
+  height: 2.8rem;
   margin-bottom: 0.9rem;
-  color: var(--gold);
-  opacity: 0.8;
+  opacity: 0.75;
+  display: block;
 }
 
 .relic-card h3 {
@@ -848,6 +859,21 @@ footer {
 }
 
 /* =============================================
+   SCROLL REVEAL
+   ============================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================
    REDUCED MOTION
    ============================================= */
 
@@ -862,8 +888,14 @@ footer {
 
   .gallery-item img,
   .relic-card,
-  .skip-link {
+  .skip-link,
+  .reveal {
     transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 

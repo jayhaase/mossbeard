@@ -1,31 +1,31 @@
 # Mossbeard's magical artifacts.
-# For a relic with a photo, add a `photo` and `photo_alt` field (and omit `icon`).
-# For a relic with an icon, add an `icon` field (Unicode character or HTML entity).
+# For a relic with a photo, add a `photo` and `photo_alt` field (and omit `svg`).
+# For a relic with an icon, add a `svg` field (path to SVG in /icons/).
 
 - name:        The Gravity Compass
-  icon:        "🧭"
+  svg:         icons/compass.svg
   description: "A heavy, solid copper ball. It helps Mossbeard know up from down during complex magic — though he will drop it directly into your hands, with little warning."
 
 - name:        The Fairy Breath Bottle
-  icon:        "🐞"
+  svg:         icons/bottle-vapors.svg
   description: "A thick glass vessel with a cork stopper, containing the breath of Beetle the Fairy. What happens when you put fairy breath in a normal bottle? Even Mossbeard doesn't know."
 
 - name:        The Everwood Staff
-  icon:        "🌳"
-  description: "Crowned with a crystal that is the very heart of Fairywing Forest. It stirs when old magic is near. It is heavy — do not drop it."
+  svg:         icons/wizard-staff.svg
+  description: "Crowned with a crystal that is the very heart of Fairywing Forest. It stirs when old magic is near."
 
 - name:        The Lucky Monkey Paw
-  icon:        "🐒"
+  svg:         icons/gem-pendant.svg
   description: "A copper pendant holding a swirling galaxy marble. It tends to bring happiness to those who hold it. Let Mossbeard know if it starts going kwee-kwee."
 
 - name:        Mossglass
-  icon:        "🟢"
+  svg:         icons/crystal-ball.svg
   description: "A bit of green moss glass from an ancient forest."
 
 - name:        The Forgotten Words Box
-  icon:        "📦"
+  svg:         icons/wooden-crate.svg
   description: "An intricate wooden box that calls to forgotten words."
 
 - name:        The Destinations Book
-  icon:        "📚"
+  svg:         icons/spell-book.svg
   description: "A book that is usually blank, and then gets heavy when Mossbeard needs to know where to go next."

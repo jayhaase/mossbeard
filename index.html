@@ -42,12 +42,12 @@ layout: default
       <h2>The Wanderer</h2>
       <div class="divider" aria-hidden="true">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
 
-      <div class="lore-intro">
+      <div class="lore-intro reveal">
         {% capture intro %}{% include content/wanderer-intro.md %}{% endcapture %}
         {{ intro | markdownify }}
       </div>
 
-      <div class="lore-text">
+      <div class="lore-text reveal">
         {% capture lore %}{% include content/wanderer-lore.md %}{% endcapture %}
         {{ lore | markdownify }}
       </div>
@@ -60,7 +60,7 @@ layout: default
       <h2>The Forgotten Words</h2>
       <div class="divider divider-crimson" aria-hidden="true">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
 
-      <div class="scroll-container">
+      <div class="scroll-container reveal">
         {% capture fw %}{% include content/forgotten-words.md %}{% endcapture %}
         {{ fw | markdownify }}
         <p class="incantation">"By moss and stone, this word is now known!"</p>
@@ -78,7 +78,7 @@ layout: default
       <div class="relics-grid">
         {% for relic in site.data.relics %}
           {% if relic.photo %}
-          <div class="relic-card relic-card--photo">
+          <div class="relic-card relic-card--photo reveal">
             <img src="{{ relic.photo | relative_url }}" alt="{{ relic.photo_alt }}" class="relic-photo" loading="lazy">
             <div class="relic-card-body">
               <h3>{{ relic.name }}</h3>
@@ -86,8 +86,10 @@ layout: default
             </div>
           </div>
           {% else %}
-          <div class="relic-card">
-            <div class="relic-icon">{{ relic.icon }}</div>
+          <div class="relic-card reveal">
+            {% if relic.svg %}
+            <img src="{{ relic.svg | relative_url }}" alt="" aria-hidden="true" class="relic-icon-svg">
+            {% endif %}
             <h3>{{ relic.name }}</h3>
             <p>{{ relic.description }}</p>
           </div>
@@ -106,7 +108,7 @@ layout: default
 
       <div class="appearances">
         {% for appearance in site.data.appearances %}
-        <div class="appearance-card{% if appearance.upcoming %} appearance-card--upcoming{% endif %}">
+        <div class="appearance-card{% if appearance.upcoming %} appearance-card--upcoming{% endif %} reveal">
           <div class="appearance-when">
             {% if appearance.upcoming %}<span class="appearance-badge">Upcoming</span>{% endif %}
             <span class="appearance-date">{{ appearance.date }}</span>

@@ -4,28 +4,35 @@
 
 - name:        The Gravity Compass
   svg:         icons/compass.svg
-  description: "A heavy, solid copper ball. It helps Mossbeard know up from down during complex magic. Be ready to catch it, he will drop it directly into your hands, with little warning."
+  description: "A heavy, solid copper ball. It helps Mossbeard know up from down during complex magic."
+  warning:     "Will be placed directly into your hands without negotiation. Do not drop it."
 
 - name:        The Fairy Breath Bottle
   svg:         icons/bottle-vapors.svg
   description: "A thick glass vessel with a cork stopper, containing the breath of Beetle the Fairy. What happens when you put fairy breath in a normal bottle? Even Mossbeard doesn't know."
+  warning:     "Do not uncork indoors. Mossbeard did once. He does not speak of it."
 
 - name:        The Everwood Staff
   svg:         icons/wizard-staff.svg
   description: "Crowned with a crystal said to be the very heart of Fairywing Forest. It stirs when old magic is near."
+  warning:     "The crystal stirs on its own. This is considered normal. Probably."
 
 - name:        The Monkey Paw
   svg:         icons/gem-pendant.svg
-  description: "A copper pendant holding a swirling galaxy marble. It tends to bring happiness to those who hold it. If it begins making a soft kwee-kwee sound, please return it to Mossbeard immediately and pretend you heard nothing."
+  description: "A copper pendant holding a swirling galaxy marble. It tends to bring happiness to those who hold it."
+  warning:     "If it begins making a soft kwee-kwee sound, please return it to Mossbeard immediately and pretend you heard nothing."
 
 - name:        Mossglass
   svg:         icons/crystal-ball.svg
   description: "A rare green glass formed where moonlight, starlight, rainwater, moss, and old magic meet in forgotten places."
+  warning:     "Looking too long has caused visitors to remember things they had not yet forgotten."
 
 - name:        The Forgotten Words Box
   svg:         icons/wooden-crate.svg
   description: "An intricate wooden box that calls to forgotten words. If you listen closely, you may hear one scratching politely at the lid, hoping to be remembered."
+  warning:     "Do not tap the lid. The words inside are not always patient."
 
 - name:        The Destinations Book
   svg:         icons/spell-book.svg
   description: "A book whose pages are usually blank. It gets heavy when it has something for Mossbeard to read, generally the next place he needs to go."
+  warning:     "Do not read the blank pages aloud. Destinations have a way of becoming compulsory."

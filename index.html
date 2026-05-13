@@ -11,6 +11,7 @@ layout: default
       <div class="hero-content">
         <h1 id="hero-title">Mossbeard</h1>
         <p class="hero-subtitle">the Wanderer</p>
+        <p class="hero-tagline">A wanderer of old woods, forgotten words, and mildly unreliable relics.<br>If you meet Mossbeard at faire, ask him for a forgotten word.</p>
         <a href="#the-wanderer" class="scroll-hint" aria-label="Scroll down">&#8595;</a>
       </div>
     </div>
@@ -68,7 +69,7 @@ layout: default
     <div class="container">
       <h2>Relics &amp; Curiosities</h2>
       <div class="divider" aria-hidden="true">❧</div>
-      <p class="section-intro">Mossbeard travels with a collection of curious and powerful artifacts that he readily shares to bring back the magic.</p>
+      <p class="section-intro">Mossbeard travels with a collection of curious and occasionally cooperative artifacts. Some are powerful. Some are nonsense. Most are both.</p>
 
       <div class="relics-grid">
         {% for relic in site.data.relics %}
@@ -79,6 +80,9 @@ layout: default
               <h3>{{ relic.name }}</h3>
               <p>{{ relic.description }}</p>
             </div>
+            {% if relic.warning %}
+            <p class="relic-warning"><img src="{{ '/icons/death-note.svg' | relative_url }}" class="relic-warning-icon" aria-hidden="true" alt="">{{ relic.warning }}</p>
+            {% endif %}
           </div>
           {% else %}
           <div class="relic-card reveal">
@@ -87,6 +91,9 @@ layout: default
             {% endif %}
             <h3>{{ relic.name }}</h3>
             <p>{{ relic.description }}</p>
+            {% if relic.warning %}
+            <p class="relic-warning"><img src="{{ '/icons/death-note.svg' | relative_url }}" class="relic-warning-icon" aria-hidden="true" alt="">{{ relic.warning }}</p>
+            {% endif %}
           </div>
           {% endif %}
         {% endfor %}

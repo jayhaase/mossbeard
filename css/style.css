@@ -126,6 +126,7 @@ a {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   margin-top: 0.6rem;
+  font-style: normal;
 }
 
 .hero-tagline {
@@ -136,7 +137,7 @@ a {
   max-width: 36em;
   margin: 1.4rem auto 0;
   line-height: 1.7;
-  font-style: italic;
+  font-style: normal;
 }
 
 .scroll-hint {

@@ -17,3 +17,15 @@
 - name:        The Lucky Monkey Paw
   icon:        "🐒"
   description: "A copper pendant holding a swirling galaxy marble. It tends to bring happiness to those who hold it. Let Mossbeard know if it starts going kwee-kwee."
+
+- name:        Mossglass
+  icon:        "🟢"
+  description: "A bit of green moss glass from an ancient forest."
+
+- name:        The Forgotten Words Box
+  icon:        "📦"
+  description: "An intricate wooden box that calls to forgotten words."
+
+- name:        The Destinations Book
+  icon:        "📚"
+  description: "A book that is usually blank, and then gets heavy when Mossbeard needs to know where to go next."

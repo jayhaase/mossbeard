@@ -33,7 +33,7 @@ sections:
 
   forgotten_words:
     title:       The Forgotten Words
-    incantation: '"By moss and stone, this word is now known!"'
+    incantation: By moss and stone, this word is now known!
 
   relics:
     title: Relics & Curiosities

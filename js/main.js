@@ -1,12 +1,9 @@
 /* Mossbeard the Wanderer — main.js */
 
-const supportsWebp = document.createElement('canvas')
-  .toDataURL('image/webp')
-  .startsWith('data:image/webp');
-
 // ---- Gallery Lightbox ----
 
 const lightbox     = document.getElementById('lightbox');
+const lightboxWebp = document.getElementById('lightbox-source-webp');
 const lightboxImg  = document.getElementById('lightbox-img');
 const btnClose     = document.querySelector('.lightbox-close');
 const btnPrev      = document.querySelector('.lightbox-prev');
@@ -14,29 +11,42 @@ const btnNext      = document.querySelector('.lightbox-next');
 const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
 
 const focusableInLightbox = [btnClose, btnPrev, btnNext];
+const pageContent = lightbox
+  ? Array.from(document.body.children).filter(
+      (el) => el !== lightbox && el.tagName !== 'SCRIPT'
+    )
+  : [];
 
 let currentIndex = 0;
 
 function setLightboxImage(index) {
   const item = galleryItems[index];
-  const src = supportsWebp && item.dataset.webp ? item.dataset.webp : item.dataset.src;
-  lightboxImg.src = src;
+  lightboxWebp.srcset = item.dataset.webp;
+  lightboxImg.src = item.dataset.src;
   lightboxImg.alt = item.dataset.alt;
   lightbox.setAttribute('aria-label', item.dataset.label);
 }
 
-if (galleryItems.length > 0 && lightbox && lightboxImg) {
+function setPageInert(inert) {
+  pageContent.forEach((el) => {
+    el.inert = inert;
+  });
+}
+
+if (galleryItems.length > 0 && lightbox && lightboxImg && lightboxWebp) {
   function openLightbox(index) {
     currentIndex = index;
     setLightboxImage(currentIndex);
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
+    setPageInert(true);
     btnClose.focus();
   }
 
   function closeLightbox() {
     lightbox.hidden = true;
     document.body.style.overflow = '';
+    setPageInert(false);
     galleryItems[currentIndex].focus();
   }
 
@@ -120,24 +130,25 @@ const navLinks  = Array.from(document.querySelectorAll('.nav-links a'));
 
 if (mainNav && navLinks.length > 0) {
   const navHeight = mainNav.offsetHeight;
+  const navSectionIds = new Set(
+    navLinks.map((link) => link.getAttribute('href').slice(1))
+  );
+  const navSections = sections.filter((s) => navSectionIds.has(s.id));
 
   const navObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navLinks.forEach((link) => {
-          link.classList.toggle(
-            'active',
-            link.getAttribute('href') === `#${entry.target.id}`
-          );
-        });
-      }
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+      });
     });
   }, {
     rootMargin: `-${navHeight}px 0px -60% 0px`,
     threshold: 0,
   });
 
-  sections.forEach((s) => navObserver.observe(s));
+  navSections.forEach((s) => navObserver.observe(s));
 }
 
 

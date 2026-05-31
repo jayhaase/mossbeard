@@ -1,0 +1,18 @@
+---
+description: Run site verification before finishing changes to this repo
+alwaysApply: true
+---
+
+# Site verification
+
+After changing site content, layouts, `_data/`, `photos/`, `css/`, `js/`, or `_plugins/`, run:
+
+```bash
+./scripts/verify.sh
+```
+
+This matches CI (`.github/workflows/lint.yml`): **yamllint** on `_data/` and `_config.yml`, **Jekyll build**, then **html-proofer** on `_site/` (internal links and images only).
+
+If `verify.sh` fails, fix the reported issues before considering the task done. Install yamllint with `brew install yamllint` if missing. Gems install automatically via `bundle install` when needed.
+
+Routine content-only edits still need verification when YAML paths, gallery entries, or image files change.

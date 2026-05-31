@@ -8,7 +8,8 @@
   {% assign page_title = page.title | default: site.title %}
   {% assign page_description = page.description | default: site.description %}
   {% assign canonical_url = page.url | absolute_url %}
-  {% assign og_image = site.data.site.hero.image | absolute_url %}
+  {% assign hero = site.data.site.hero %}
+  {% assign og_image = hero.image | absolute_url %}
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
   <meta property="og:type" content="website">
@@ -34,8 +35,8 @@
     <button class="lightbox-close" aria-label="Close photo viewer">&#10005;</button>
     <button class="lightbox-prev" aria-label="Previous photo">&#8592;</button>
     <picture>
-      <source id="lightbox-source-webp" type="image/webp" srcset="">
-      <img id="lightbox-img" src="" alt="" aria-live="polite">
+      <source id="lightbox-source-webp" type="image/webp" srcset="{{ hero.image_webp | relative_url }}">
+      <img id="lightbox-img" src="{{ hero.image | relative_url }}" alt="{{ hero.image_alt }}" aria-live="polite">
     </picture>
     <button class="lightbox-next" aria-label="Next photo">&#8594;</button>
   </div>

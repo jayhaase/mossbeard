@@ -1,0 +1,52 @@
+# Site-wide copy and links — edit here for hero, nav, section intros, and CTAs.
+
+facebook_url: https://www.facebook.com/people/Mossbeard-the-Wanderer/61580016592890/
+
+hero:
+  image:      photos/mossbeard-hero.jpg
+  image_webp: photos/mossbeard-hero.webp
+  image_alt:  Mossbeard the Wanderer in the forest with his Everwood Staff
+  width:      1279
+  height:     1920
+  title:      Mossbeard
+  subtitle:   the Wanderer
+  tagline:    A wanderer of old woods, forgotten words, and mildly unreliable relics.
+  tagline_cta: If you meet Mossbeard at faire, ask him for a forgotten word.
+
+nav:
+  - label: The Wanderer
+    href:  "#the-wanderer"
+  - label: Forgotten Words
+    href:  "#forgotten-words"
+  - label: Relics
+    href:  "#relics"
+  - label: Find Mossbeard
+    href:  "#find-mossbeard"
+  - label: Gallery
+    href:  "#gallery"
+  - label: Connect
+    href:  "#connect"
+
+sections:
+  wanderer:
+    title: The Wanderer
+
+  forgotten_words:
+    title:       The Forgotten Words
+    incantation: '"By moss and stone, this word is now known!"'
+
+  relics:
+    title: Relics & Curiosities
+    intro: Mossbeard travels with a collection of curious and occasionally cooperative artifacts. Some are powerful. Some are nonsense. Most are both.
+
+  appearances:
+    title: Find Mossbeard
+    intro: Mossbeard roams where merriment and wonder gather. Seek him at these faires.
+
+  gallery:
+    title: Gallery
+
+  connect:
+    title: Follow the Trail
+    body:  Mossbeard posts tales from the trail, forgotten wisdom, and word of where he'll wander next. Follow along — you never know what turns up in the box.
+    cta:   Find Mossbeard on Facebook

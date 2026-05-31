@@ -1,0 +1,36 @@
+{% assign relics_section = site.data.site.sections.relics %}
+<section id="relics" class="section-dark">
+  <div class="container">
+    <h2>{{ relics_section.title }}</h2>
+    <div class="divider" aria-hidden="true">❧</div>
+    <p class="section-intro">{{ relics_section.intro }}</p>
+
+    <div class="relics-grid">
+      {% for relic in site.data.relics %}
+        {% if relic.photo %}
+        <div class="relic-card relic-card--photo reveal">
+          <img src="{{ relic.photo | relative_url }}" alt="{{ relic.photo_alt }}" class="relic-photo" loading="lazy">
+          <div class="relic-card-body">
+            <h3>{{ relic.name }}</h3>
+            <p>{{ relic.description }}</p>
+          </div>
+          {% if relic.warning %}
+          <p class="relic-warning"><img src="{{ '/icons/death-note.svg' | relative_url }}" class="relic-warning-icon" aria-hidden="true" alt="">{{ relic.warning }}</p>
+          {% endif %}
+        </div>
+        {% else %}
+        <div class="relic-card reveal">
+          {% if relic.svg %}
+          <img src="{{ relic.svg | relative_url }}" alt="" aria-hidden="true" class="relic-icon-svg">
+          {% endif %}
+          <h3>{{ relic.name }}</h3>
+          <p>{{ relic.description }}</p>
+          {% if relic.warning %}
+          <p class="relic-warning"><img src="{{ '/icons/death-note.svg' | relative_url }}" class="relic-warning-icon" aria-hidden="true" alt="">{{ relic.warning }}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

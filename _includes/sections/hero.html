@@ -1,0 +1,26 @@
+<header>
+  <section id="hero" aria-labelledby="hero-title">
+    {% assign hero = site.data.site.hero %}
+    <div class="hero-media">
+      <picture>
+        <source type="image/webp" srcset="{{ hero.image_webp | relative_url }}">
+        <img
+          class="hero-image"
+          src="{{ hero.image | relative_url }}"
+          alt="{{ hero.image_alt }}"
+          width="{{ hero.width }}"
+          height="{{ hero.height }}"
+          fetchpriority="high"
+          decoding="async">
+      </picture>
+    </div>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1 id="hero-title">{{ hero.title }}</h1>
+        <p class="hero-subtitle">{{ hero.subtitle }}</p>
+        <p class="hero-tagline">{{ hero.tagline }}<br>{{ hero.tagline_cta }}</p>
+        <a href="#the-wanderer" class="scroll-hint" aria-label="Scroll down">&#8595;</a>
+      </div>
+    </div>
+  </section>
+</header>

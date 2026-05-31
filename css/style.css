@@ -78,19 +78,46 @@ a {
 #hero {
   height: 100vh;
   min-height: 560px;
-  background-image: url('../photos/Facebook Image.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-media picture,
+.hero-media .hero-image {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Extra crop room while the image is held fixed during scroll (see main.js) */
+#hero.hero-parallax .hero-media picture,
+#hero.hero-parallax .hero-media .hero-image {
+  height: 115%;
+  top: -7.5%;
+}
+
+#hero.hero-parallax .hero-media .hero-image {
+  will-change: transform;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     to bottom,
     rgba(10, 10, 5, 0.25) 0%,
@@ -362,37 +389,6 @@ h3 {
 /* =============================================
    THE WANDERER SECTION
    ============================================= */
-
-.lore-intro {
-  text-align: center;
-  padding: 0 1rem 2.8rem;
-  position: relative;
-}
-
-.lore-intro::before,
-.lore-intro::after {
-  content: '✦';
-  display: block;
-  color: var(--gold);
-  font-size: 0.85rem;
-  opacity: 0.5;
-  letter-spacing: 0.5em;
-  margin-bottom: 1.25rem;
-}
-
-.lore-intro::after {
-  margin-top: 1.25rem;
-  margin-bottom: 0;
-}
-
-.lore-intro p {
-  font-size: 1.2rem;
-  font-style: normal;
-  color: var(--parchment);
-  line-height: 1.85;
-  max-width: 58ch;
-  margin: 0 auto;
-}
 
 .lore-text p {
   margin-bottom: 1.5rem;
@@ -747,6 +743,12 @@ h3 {
   gap: 6px;
 }
 
+.gallery-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .gallery-item {
   display: block;
   overflow: hidden;
@@ -946,6 +948,12 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .hero-media picture,
+  .hero-media .hero-image {
+    height: 100%;
+    top: 0;
   }
 
   .scroll-hint {

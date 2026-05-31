@@ -1,0 +1,12 @@
+<nav id="main-nav" aria-label="Main navigation">
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div id="nav-links" class="nav-links">
+    {% for item in site.data.site.nav %}
+    <a href="{{ item.href }}">{{ item.label }}</a>
+    {% endfor %}
+  </div>
+</nav>

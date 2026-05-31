@@ -1,0 +1,11 @@
+<section id="the-wanderer" class="section-dark">
+  <div class="container">
+    <h2>{{ site.data.site.sections.wanderer.title }}</h2>
+    <div class="divider" aria-hidden="true">❧</div>
+
+    <div class="lore-text reveal">
+      {% capture lore %}{% include content/wanderer-lore.md %}{% endcapture %}
+      {{ lore | markdownify }}
+    </div>
+  </div>
+</section>

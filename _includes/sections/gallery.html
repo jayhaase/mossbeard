@@ -1,0 +1,27 @@
+<section id="gallery" class="section-dark">
+  <div class="container">
+    <h2>{{ site.data.site.sections.gallery.title }}</h2>
+    <div class="divider" aria-hidden="true">❧</div>
+
+    <div class="gallery-grid">
+      {% for photo in site.data.gallery %}
+      <button class="gallery-item"
+              data-src="{{ photo.src | relative_url }}"
+              data-webp="{{ photo.webp | relative_url }}"
+              data-alt="{{ photo.alt }}"
+              data-label="{{ photo.label }}"
+              aria-label="View photo: {{ photo.label }}">
+        <picture>
+          <source type="image/webp" srcset="{{ photo.thumb_webp | relative_url }}">
+          <img src="{{ photo.thumb | relative_url }}"
+               alt="{{ photo.alt }}"
+               width="{{ photo.width }}"
+               height="{{ photo.height }}"
+               loading="lazy"
+               decoding="async">
+        </picture>
+      </button>
+      {% endfor %}
+    </div>
+  </div>
+</section>

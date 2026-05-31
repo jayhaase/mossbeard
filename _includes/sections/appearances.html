@@ -1,0 +1,35 @@
+{% assign appearances_section = site.data.site.sections.appearances %}
+<section id="find-mossbeard" class="section-parchment">
+  <div class="container">
+    <h2>{{ appearances_section.title }}</h2>
+    <div class="divider divider-crimson" aria-hidden="true">❧</div>
+    <p class="section-intro">{{ appearances_section.intro }}</p>
+
+    <div class="appearances">
+      {% assign today = site.time | date: '%Y-%m-%d' %}
+      {% for appearance in site.data.appearances %}
+      {% if appearance.ends_on %}
+        {% assign ends_on = appearance.ends_on | date: '%Y-%m-%d' %}
+      {% else %}
+        {% assign ends_on = '9999-12-31' %}
+      {% endif %}
+      {% if ends_on >= today %}
+      <div class="appearance-card{% if appearance.upcoming %} appearance-card--upcoming{% endif %} reveal">
+        <div class="appearance-when">
+          {% if appearance.upcoming %}<span class="appearance-badge">Upcoming</span>{% endif %}
+          <span class="appearance-date">{{ appearance.date }}</span>
+        </div>
+        <div class="appearance-details">
+          <h3>{{ appearance.name }}</h3>
+          <p class="appearance-location">{{ appearance.location }}</p>
+          <p>{{ appearance.description }}</p>
+          {% if appearance.url %}
+          <a href="{{ appearance.url }}" target="_blank" rel="noopener" class="faire-link">{{ appearance.link_text | default: "Learn more" }} &#8594;</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

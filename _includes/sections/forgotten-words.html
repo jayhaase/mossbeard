@@ -1,0 +1,13 @@
+{% assign fw_section = site.data.site.sections.forgotten_words %}
+<section id="forgotten-words" class="section-parchment">
+  <div class="container">
+    <h2>{{ fw_section.title }}</h2>
+    <div class="divider divider-crimson" aria-hidden="true">❧</div>
+
+    <div class="scroll-container reveal">
+      {% capture fw %}{% include content/forgotten-words.md %}{% endcapture %}
+      {{ fw | markdownify }}
+      <p class="incantation">{{ fw_section.incantation }}</p>
+    </div>
+  </div>
+</section>

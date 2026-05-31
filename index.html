@@ -109,7 +109,14 @@ layout: default
       <p class="section-intro">Mossbeard roams where merriment and wonder gather. Seek him at these faires.</p>
 
       <div class="appearances">
+        {% assign today = site.time | date: '%Y-%m-%d' %}
         {% for appearance in site.data.appearances %}
+        {% if appearance.ends_on %}
+          {% assign ends_on = appearance.ends_on | date: '%Y-%m-%d' %}
+        {% else %}
+          {% assign ends_on = '9999-12-31' %}
+        {% endif %}
+        {% if ends_on >= today %}
         <div class="appearance-card{% if appearance.upcoming %} appearance-card--upcoming{% endif %} reveal">
           <div class="appearance-when">
             {% if appearance.upcoming %}<span class="appearance-badge">Upcoming</span>{% endif %}
@@ -124,6 +131,7 @@ layout: default
             {% endif %}
           </div>
         </div>
+        {% endif %}
         {% endfor %}
       </div>
     </div>

@@ -35,11 +35,14 @@ Add, remove, or reorder blocks to update the *Find Mossbeard* section.
 - name:        My New Faire
   location:    City, State
   date:        October 2026
+  ends_on:     2026-10-31   # last day to show; card drops off on the next site build
   upcoming:    true        # shows the "Upcoming" badge when true
   description: A wonderful faire in the autumn woods.
   url:         https://example.com
   link_text:   Visit the Faire
 ```
+
+Past appearances are hidden automatically when the site rebuilds (each push to GitHub). Set `ends_on` to the faire’s last day.
 
 ### Gallery photos — `_data/gallery.yml`
 

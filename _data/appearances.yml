@@ -1,9 +1,11 @@
 # Faire appearances — add or remove entries to update the Find Mossbeard section.
 # Set upcoming: true to show the "Upcoming" badge.
+# ends_on: last day to show this card (YYYY-MM-DD); omitted entries never expire.
 
 - name:        Renaissance Faire at Sleepy Hollow
   location:    Des Moines, Iowa
   date:        May 2026
+  ends_on:     2026-05-16
   upcoming:    true
   description: "A fine gathering of wanderers, makers, and mischief — and Mossbeard will be among them. Stop by and see what he's carrying this season."
   url:         https://sleepyhollowrenfaire.com/
@@ -12,6 +14,7 @@
 - name:        Minnesota Renaissance Festival
   location:    Shakopee, Minnesota
   date:        Summer & Fall 2026
+  ends_on:     2026-10-04
   upcoming:    false
   description: One of the largest Renaissance festivals in the country, running through the heart of summer into fall. A homecoming for the Wanderer.
   url:         https://renaissancefest.com/

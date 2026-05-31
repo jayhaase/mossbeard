@@ -32,6 +32,11 @@
   description: "An intricate wooden box that calls to forgotten words. If you listen closely, you may hear one scratching politely at the lid, hoping to be remembered."
   warning:     "Do not tap the lid. The words inside are not always patient."
 
+- name:        The Violet Box of Forgotten Memories
+  svg:         icons/locked-chest.svg
+  description: "An old, small box where forgotten memories sometimes come to rest. They often need help finding their way back to their owner."
+  warning:     "Forgotten memories are shy. It’s best to hold your breath when you open the box."
+
 - name:        The Destinations Book
   svg:         icons/spell-book.svg
   description: "A book whose pages are usually blank. It gets heavy when it has something for Mossbeard to read, generally the next place he needs to go."

@@ -93,7 +93,7 @@ Update `title` and `description` at the top of `_config.yml`. After changing CSS
 
 You only need this if you want to see changes before pushing to GitHub.
 
-**Prerequisites:** Ruby (any version) and Bundler:
+**Prerequisites:** Ruby 3.3+ and Bundler:
 
 ```bash
 gem install bundler

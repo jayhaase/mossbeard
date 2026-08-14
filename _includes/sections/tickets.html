@@ -1,0 +1,13 @@
+{% assign tickets = site.data.site.sections.tickets %}
+<section id="tickets" class="section-connect">
+  <div class="container container--centered">
+    <h2>{{ tickets.title }}</h2>
+    <div class="divider" aria-hidden="true">❧</div>
+    <p>{{ tickets.body }}</p>
+    <div class="promo-code">
+      <span class="promo-code-label">Promo Code</span>
+      <span class="promo-code-value">{{ tickets.code }}</span>
+    </div>
+    <a href="{{ tickets.url }}" target="_blank" rel="noopener" class="cta-btn">{{ tickets.cta }}</a>
+  </div>
+</section>

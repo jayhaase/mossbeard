@@ -22,6 +22,8 @@ nav:
     href:  "#relics"
   - label: Find Mossbeard
     href:  "#find-mossbeard"
+  - label: Tickets
+    href:  "#tickets"
   - label: Gallery
     href:  "#gallery"
   - label: Connect
@@ -42,6 +44,13 @@ sections:
   appearances:
     title: Find Mossbeard
     intro: Mossbeard roams where merriment and wonder gather. Seek him at these faires.
+
+  tickets:
+    title: A Word Worth Saying
+    body:  Whisper Mossbeard's name at checkout and the gate grows a little kinder. Three dollars off every ticket to the Minnesota Renaissance Festival, no spellbook required.
+    code:  Mossbeard
+    url:   https://www.etix.com/ticket/v/18401/minnesota-renaissance-festival
+    cta:   Claim Your Tickets
 
   gallery:
     title: Gallery

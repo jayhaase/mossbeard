@@ -1,0 +1,63 @@
+---
+layout: default
+permalink: /tickets/
+title: A Word Worth Saying — $3 Off MN Renaissance Festival Tickets
+description: Use Mossbeard's promo code at checkout and save $3 on every ticket to the Minnesota Renaissance Festival.
+---
+
+{% assign tickets = site.data.site.sections.tickets %}
+
+<a href="{{ '/' | relative_url }}" class="ticket-back-link">&#8592; Back to Mossbeard's Trail</a>
+
+<header class="ticket-hero">
+  <div class="ticket-hero-media">
+    <picture>
+      <source type="image/webp" srcset="{{ tickets.hero_image_webp | relative_url }}">
+      <img src="{{ tickets.hero_image | relative_url }}" alt="{{ tickets.hero_image_alt }}" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <div class="ticket-hero-overlay">
+    <div class="ticket-hero-content">
+      <p class="ticket-eyebrow">{{ tickets.eyebrow }}</p>
+      <h1>{{ tickets.title }}</h1>
+      <p class="ticket-hero-tagline">{{ tickets.page_tagline }}</p>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section id="ticket-code" class="section-connect">
+    <div class="container container--centered">
+      <p>{{ tickets.body }}</p>
+      <div class="promo-code">
+        <span class="promo-code-label">Promo Code</span>
+        <span class="promo-code-value">{{ tickets.code }}</span>
+      </div>
+      <a href="{{ tickets.url }}" target="_blank" rel="noopener" class="cta-btn">{{ tickets.cta }}</a>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container">
+      <h2>{{ tickets.steps_title }}</h2>
+      <div class="divider" aria-hidden="true">❧</div>
+
+      <div class="relics-grid ticket-steps">
+        {% for step in tickets.steps %}
+        <div class="relic-card reveal">
+          <img src="{{ step.icon | relative_url }}" alt="" aria-hidden="true" class="relic-icon-svg">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-parchment">
+    <div class="container container--centered">
+      <p class="ticket-note">{{ tickets.note }}</p>
+      <a href="{{ tickets.url }}" target="_blank" rel="noopener" class="cta-btn cta-btn--dark">{{ tickets.cta }}</a>
+    </div>
+  </section>
+</main>

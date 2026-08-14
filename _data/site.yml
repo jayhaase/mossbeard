@@ -51,6 +51,23 @@ sections:
     code:  Mossbeard
     url:   https://www.etix.com/ticket/v/18401/minnesota-renaissance-festival
     cta:   Claim Your Tickets
+    eyebrow:  A Gift From the Trail
+    page_tagline: Mossbeard is always handing out forgotten words. This one just happens to be worth $3 at the gate.
+    hero_image:      photos/mossbeard-mad-hatter.jpg
+    hero_image_webp: photos/mossbeard-mad-hatter.webp
+    hero_image_alt:  Mossbeard lifting his staff at the Minnesota Renaissance Festival
+    steps_title: How the Magic Works
+    steps:
+      - icon:  icons/compass.svg
+        title: Find Your Way
+        text:  Follow the trail to the festival's ticket page, wherever the road (or this button) takes you.
+      - icon:  icons/spell-book.svg
+        title: Speak the Word
+        text:  Enter "Mossbeard" at checkout. No wand required, though he wouldn't judge you for trying.
+      - icon:  icons/gem-pendant.svg
+        title: Keep the Difference
+        text:  Three dollars off, per ticket, tucked back into your coin purse for road snacks and trinkets.
+    note: One word, many savings. Works on tickets to the Minnesota Renaissance Festival.
 
   gallery:
     title: Gallery

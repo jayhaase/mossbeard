@@ -9,7 +9,9 @@
       "WebFetch(domain:jayhaase.github.io)",
       "WebFetch(domain:game-icons.net)",
       "Bash(bundle exec *)",
-      "Bash(git fetch *)"
+      "Bash(git fetch *)",
+      "Bash(yamllint _data _config.yml)",
+      "Bash(echo \"exit code: $?\")"
     ]
   }
 }

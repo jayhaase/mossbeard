@@ -11,7 +11,7 @@ kramdown:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - docs/
   - scripts/
   - .claude/
   - README.md
+  - AGENTS.md

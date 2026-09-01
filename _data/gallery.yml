@@ -28,15 +28,6 @@
   alt:        Mossbeard the Wanderer, proud and ready
   label:      Mossbeard portrait
 
-- src:        photos/mossbeard-staff-sky.jpg
-  webp:       photos/mossbeard-staff-sky.webp
-  thumb:      photos/thumbs/mossbeard-staff-sky.jpg
-  thumb_webp: photos/thumbs/mossbeard-staff-sky.webp
-  width:      1280
-  height:     1920
-  alt:        Mossbeard raising his staff to the sky
-  label:      Mossbeard raises his staff
-
 - src:        photos/mossbeard-mad-hatter.jpg
   webp:       photos/mossbeard-mad-hatter.webp
   thumb:      photos/thumbs/mossbeard-mad-hatter.jpg

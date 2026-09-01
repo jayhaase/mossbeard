@@ -72,3 +72,12 @@
   height:     1920
   alt:        A portrait of the Wanderer
   label:      Portrait of Mossbeard
+
+- src:        photos/monkey-paw.jpg
+  webp:       photos/monkey-paw.webp
+  thumb:      photos/thumbs/monkey-paw.jpg
+  thumb_webp: photos/thumbs/monkey-paw.webp
+  width:      1281
+  height:     1920
+  alt:        Mossbeard holding the Monkey Paw pendant in his palm
+  label:      The Monkey Paw

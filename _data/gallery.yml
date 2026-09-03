@@ -72,3 +72,12 @@
   height:     1920
   alt:        Mossbeard holding the Monkey Paw pendant in his palm
   label:      The Monkey Paw
+
+- src:        photos/mossbeard-green-magic.jpg
+  webp:       photos/mossbeard-green-magic.webp
+  thumb:      photos/thumbs/mossbeard-green-magic.jpg
+  thumb_webp: photos/thumbs/mossbeard-green-magic.webp
+  width:      1278
+  height:     1920
+  alt:        Mossbeard raising his glowing staff at dusk
+  label:      Mossbeard's green magic
